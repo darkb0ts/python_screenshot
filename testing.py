@@ -1,27 +1,3 @@
-# from fastapi import FastAPI
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-
-
-# app= FastAPI()
-# url="https://www.geeksforgeeks.org/"
-# async def screenshot(url,driver):
-#     driver.get(url)
-#     try:
-#         button = WebDriverWait(driver, 10).until(
-#             EC.element_to_be_clickable((By.ID, 'three90__modal-close-btn'))
-#         )
-#         button.click()
-#         driver.save_screenshot(f"{url}".txt)
-#     except:
-#         return {"message":None}
-
-
-# if __name__=="__main__":
-#     driver = webdriver.Firefox()
-
 from fastapi import FastAPI, HTTPException
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
