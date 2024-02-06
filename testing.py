@@ -11,20 +11,11 @@ firefox_options = Options()
 firefox_options.add_argument('--headless')
 driver = webdriver.Firefox(options=firefox_options)
 
-def clean_url(url):
-    if url.startswith("https://"):
-        url = url[len("https://"):]
-    if url.startswith("www."):
-        url = url[len("www."):]
-    if url.endswith("/"):
-        url = url[:-1]
-    return url
-
 def capture_screenshot(url):
-    url="https://www.javatpoint.com/"
     try:
+        url="https://www."+url
         driver.get(url)
-        image_path = clean_url(url)
+        image_path = url
         driver.save_screenshot(f"{image_path}.png")
         absolute_path = os.path.abspath(image_path)
         print(f"The absolute path of the image is: {absolute_path}")
@@ -48,3 +39,4 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
     '''uvicorn your_filename:app --reload'''
+    
